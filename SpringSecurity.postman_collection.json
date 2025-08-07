@@ -1,0 +1,126 @@
+{
+	"info": {
+		"_postman_id": "afa4111d-3a42-43e5-b9f6-4c69fa8d6528",
+		"name": "SpringSecurity",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28284985"
+	},
+	"item": [
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"user\",\r\n    \"password\": \"user123\",\r\n    \"role\": \"USER\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/register/user",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"register",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/authenticate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"admin123\"\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/authenticate",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get  USER Home",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJuYW1lIjoiSGFyaSIsInN1YiI6ImFkbWluIiwiaWF0IjoxNzU0NDA1OTc5LCJleHAiOjE3NTQ0MDc3Nzl9.jhlwDxVrEcqIbmW2N5zYeOO1B0PTDetTuHeZU6fEkMfmSlgicHEaHPG9_801gVcZ6vVqsyDhuLNekROF1KArWw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"admin123\"\r\n    \r\n}"
+				},
+				"url": {
+					"raw": "{{baseURL}}/user/home",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"user",
+						"home"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get ADMIN Home",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJuYW1lIjoiSGFyaSIsInN1YiI6ImFkbWluIiwiaWF0IjoxNzU0NDA1OTc5LCJleHAiOjE3NTQ0MDc3Nzl9.jhlwDxVrEcqIbmW2N5zYeOO1B0PTDetTuHeZU6fEkMfmSlgicHEaHPG9_801gVcZ6vVqsyDhuLNekROF1KArWw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/admin/home",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"admin",
+						"home"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
